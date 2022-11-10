@@ -1,14 +1,22 @@
-
 class Solution {
     public long solution(long n) {
+        
         long answer = 0;
         
-        double d=Math.sqrt(n);
-        int num=(int)d;
-        
-        if(d==num) answer=(long)Math.pow(num+1,2);
-        else answer=-1;
+        long x=1;
+        while(x<=n){
+            if(n==x*x){
+               answer = (x+1)*(x+1);
+                break;
+            }
+            if(n!=x*x){
+            answer = -1;
+            }
+            x++;
+        }
         
         return answer;
+        
+        
     }
 }
