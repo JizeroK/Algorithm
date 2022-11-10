@@ -1,3 +1,4 @@
+
 class Solution {
     public long solution(long n) {
         
