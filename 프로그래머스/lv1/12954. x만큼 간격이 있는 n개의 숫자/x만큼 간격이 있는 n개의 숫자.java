@@ -1,12 +1,13 @@
 class Solution {
     public long[] solution(int x, int n) {
-        long[] answer = {};
-        answer=new long[n]; //n개의 배열 선언
-        
-        for(int i=0; i<n; i++){
-            answer[i]=(i+1)*(long)x;
+        long[] answer = new long[n];
+        answer[0] = x;
+
+        for (int i = 1; i < n; i++) {
+            answer[i] = answer[i - 1] + x;
         }
-        
+
         return answer;
+
     }
 }
