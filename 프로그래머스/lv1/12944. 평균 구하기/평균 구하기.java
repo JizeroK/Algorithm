@@ -5,7 +5,7 @@ class Solution {
         for(int n:arr)
             answer+=n;
         
-        answer=answer/arr.length;
+        answer/=arr.length;
         
         return answer;
     }
