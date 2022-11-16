@@ -1,12 +1,12 @@
 class Solution {
-    public int solution(long num) {
+    public int solution(int num) {
         int answer = 0;
         
-        while(num!=1) {        //1이면 반복문 종료
+        while(num!=1) {      
             if(num%2==0) {
                 num=num/2;
             }
-            else {  
+            else if(num%2==1) {  
                 num=(num*3)+1; 
             }
             
@@ -17,9 +17,7 @@ class Solution {
                 break;
             }
         }
-    
+        
         return answer;
     }
 }
-
-
