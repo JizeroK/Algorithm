@@ -1,41 +1,34 @@
 import java.util.*;
+
 class Solution {
-	public int[] solution(int[] arr) {
+    public int[] solution(int[] arr) {
+        int[] answer = {};
 
-		int[] answer={};
-		int[] one={-1};		
+        int min_index=0;
+        int i=0;
+        for(i=0; i<arr.length; i++){
+            if(arr[min_index]>arr[i])
+                min_index=i;
+        }
 
-		if(arr.length==1) {
-			answer=one;
-		}else if(arr.length!=1){
+        if(i==1){
+            answer=new int[1];
+            answer[0]=-1;
+        }
+        else{
+            ArrayList<Integer> list=new ArrayList<>();
+            for(int a: arr){
+                list.add(a);
+            }
+            list.remove(min_index);
+            answer=new int[list.size()];
+            //answer=list.stream().mapToInt(Integer::intValue).toArray();
+            for(int j=0; j<list.size(); j++){
+                answer[j]=list.get(j);
+            }
+        }
 
-			int[] arr1 = new int[arr.length-1];
 
-			//최소값 min 구하기
-			int min = arr[0];
-			for(int i=1;i<arr.length;i++) {
-				if(min>arr[i]) {
-					min = arr[i];
-				}
-			}
-
-			
-			boolean sw=false;  //true일때 앞으로 땡기기
-			for(int i=0;i<arr1.length;i++) {
-				if(min==arr[i] && sw==false){
-					arr1[i]=arr[i+1];
-                    System.out.println(arr1[i]);
-					sw = true;  //최소값 제거
-				}
-                if(sw==false){
-                    arr1[i]=arr[i];
-                }
-                if(sw==true){
-                    arr1[i]=arr[i+1];
-                }
-			}
-            answer = arr1;    
-		}
-		return answer;
-	}
+        return answer;
+    }
 }
