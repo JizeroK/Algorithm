@@ -1,40 +1,34 @@
 import java.util.*;
+
 class Solution {
-	public int[] solution(int[] arr) {
+    public int[] solution(int[] arr) {
+        int[] answer = {};
 
-		int[] answer={};
-		int[] one={-1};		
+        int min_index=0;
+        int i=0;
+        for(i=0; i<arr.length; i++){
+            if(arr[min_index]>arr[i])
+                min_index=i;
+        }
 
-		if(arr.length==1) {
-			answer=one;
-		}else if(arr.length!=1){
+        if(i==1){
+            answer=new int[1];
+            answer[0]=-1;
+        }
+        else{
+            ArrayList<Integer> list=new ArrayList<>();
+            for(int a: arr){
+                list.add(a);
+            }
+            list.remove(min_index);
+            answer=new int[list.size()];
+            //answer=list.stream().mapToInt(Integer::intValue).toArray();
+            for(int j=0; j<list.size(); j++){
+                answer[j]=list.get(j);
+            }
+        }
 
-			int[] arr1 = new int[arr.length-1];
 
-			//최소값 min 구하기
-			int min = arr[0];
-			for(int i=1;i<arr.length;i++) {
-				if(min>arr[i]) {
-					min = arr[i];
-				}
-			}
-
-			boolean sw=false;  //true일때 앞으로 땡기기 시작
-			for(int i=0;i<arr1.length;i++) {
-				if(min==arr[i] && sw==false){  //최소값을 만났을때만 실행되는 if문
-					arr1[i]=arr[i+1];
-					sw = true;  //최소값이 나왔다는 표시
-				}
-				else if(sw==true){ //최소값이 나온 뒤 배열 땡기기
-					arr1[i]=arr[i+1];
-				}
-				else if(sw==false){ //아직 최소값이 나오지 않았을 때
-					arr1[i]=arr[i];
-				}
-				
-			}
-			answer = arr1;    
-		}
-		return answer;
-	}
+        return answer;
+    }
 }
