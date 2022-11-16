@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.ArrayList;
 
 class Solution {
     public int[] solution(int[] arr) {
@@ -27,7 +27,6 @@ class Solution {
                 answer[j]=list.get(j);
             }
         }
-
 
         return answer;
     }
