@@ -1,9 +1,20 @@
 class Solution {
     public boolean solution(String s) {
-        boolean answer = false;
+        boolean answer = true;
+        char ch;
         
-        if(s.matches("-?\\d+(\\.\\d+)?")&&(s.length()==4 || s.length()==6))
-            answer=true;
+        if(s.length()==4||s.length()==6){
+            for(int i=0; i<s.length(); i++){
+                ch=s.charAt(i);
+                if(!(48<=ch&&ch<=57)){
+                    answer=false;
+                    break;
+                }
+            }
+        } else{
+            answer=false;
+        }
+        
         return answer;
     }
 }
