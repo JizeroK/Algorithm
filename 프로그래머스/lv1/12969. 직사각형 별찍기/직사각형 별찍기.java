@@ -6,11 +6,9 @@ class Solution {
         int a = sc.nextInt();
         int b = sc.nextInt();
 
-        for(int i=0; i<b; i++){
-            for(int j=0; j<a; j++){
-                System.out.print("*");
-            }
-            System.out.println();
+        for(int i=1; i<=a*b; i++){
+            if(i%a!=0) System.out.print("*");
+            else System.out.println("*");
         }
     }
 }
