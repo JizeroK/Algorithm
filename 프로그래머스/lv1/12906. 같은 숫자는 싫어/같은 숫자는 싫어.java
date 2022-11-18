@@ -3,21 +3,20 @@ import java.util.*;
 public class Solution {
     public int[] solution(int []arr) {
         int[] answer = {};
-
-        Stack<Integer> stack = new Stack<>();  //int형 스택
-
-        stack.push(arr[0]);
+        
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        list.add(arr[0]);
         for(int i=1; i<arr.length; i++){
-            if(stack.peek()!=arr[i]){
-                stack.push(arr[i]);
-            }
+            if(arr[i-1]==arr[i])
+                continue;
+            list.add(arr[i]);
         }
-
-        answer = new int[stack.size()];
-        for(int i=0; i<stack.size(); i++){
-            answer[i] = stack.get(i);        
+        
+        answer=new int[list.size()];
+        for(int i=0; i<list.size(); i++){
+            answer[i]=list.get(i);
         }
-
+        
         return answer;
     }
 }
