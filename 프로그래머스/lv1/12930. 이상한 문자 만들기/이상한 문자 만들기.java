@@ -7,13 +7,15 @@ class Solution {
         
         for(int i=0; i<s.length(); i++){
             c=s.charAt(i);
-            if(c==' ') check=false;
+            if(c==' ') check=false;  //빈칸 만나면 무조건 else문으로 
             if(check){  //check==true 일때
-                builder.setCharAt(i, Character.toUpperCase(c));
+                if(Character.isLowerCase(c))
+                    builder.setCharAt(i, Character.toUpperCase(c));
                 check=false;
             }
             else{
-                builder.setCharAt(i, Character.toLowerCase(c));
+                if(Character.isUpperCase(c))
+                    builder.setCharAt(i, Character.toLowerCase(c));
                 check=true;
             }
         }
