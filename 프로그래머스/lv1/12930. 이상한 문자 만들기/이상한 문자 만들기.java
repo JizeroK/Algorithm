@@ -9,14 +9,18 @@ class Solution {
             c=s.charAt(i);
             if(c==' ') check=false;  //빈칸 만나면 무조건 else문으로 
             if(check){  //check==true 일때
-                if(Character.isLowerCase(c))
-                    builder.setCharAt(i, Character.toUpperCase(c));
                 check=false;
+                if(!Character.isLowerCase(c))
+                    continue;
+                builder.setCharAt(i, Character.toUpperCase(c));
+                
             }
             else{
-                if(Character.isUpperCase(c))
-                    builder.setCharAt(i, Character.toLowerCase(c));
                 check=true;
+                if(!Character.isUpperCase(c))
+                    continue;
+                builder.setCharAt(i, Character.toLowerCase(c));
+                
             }
         }
         
