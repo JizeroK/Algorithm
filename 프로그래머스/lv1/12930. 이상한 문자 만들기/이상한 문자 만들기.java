@@ -29,26 +29,3 @@ class Solution {
         return answer;
     }
 }
-
-/*
-        String[] str = s.split(" ");
-        int count=0;
-        StringBuilder builder=null;
-        
-        while(count<str.length){
-            builder = new StringBuilder(str[count]);
-            for(int i=0; i<str[count].length(); i++){
-                char c=str[count].charAt(i);
-                if(i%2==0&&Character.isLowerCase(c)) {
-                    builder.setCharAt(i, Character.toUpperCase(c));
-                }
-                else if(i%2!=0&&Character.isUpperCase(c)){
-                    builder.setCharAt(i, Character.toLowerCase(c));
-                }
-            }
-            answer+=builder+" ";
-            count++;
-        }
-        
-        answer=answer.trim();
-*/
