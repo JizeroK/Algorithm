@@ -4,17 +4,17 @@ class Solution {
     public int[] solution(int[] numbers) {
         int[] answer = {}; 
         int c=0;
-        LinkedHashSet<Integer> linkedHashSet = new LinkedHashSet<>();
+        HashSet<Integer> hash = new HashSet<>();
             
         for(int i=0; i<numbers.length-1; i++){
             for(int j=i+1; j<numbers.length; j++){
-                linkedHashSet.add(numbers[i]+numbers[j]);
+                hash.add(numbers[i]+numbers[j]);
             }
         }
         
-        answer=new int[linkedHashSet.size()];
+        answer=new int[hash.size()];
         
-        Iterator it=linkedHashSet.iterator();
+        Iterator it=hash.iterator();
 	    while(it.hasNext()){
             String t=it.next()+"";
             answer[c]=Integer.parseInt(t);
