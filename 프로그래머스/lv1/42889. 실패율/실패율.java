@@ -1,7 +1,7 @@
 import java.util.*;
 
 class Solution {
-      public static int[] solution(int N, int[] stages) { //2, {1}
+      public static int[] solution(int N, int[] stages) { 
         int[] answer = {};
         answer = new int[N];
         ArrayList<Integer> plist = new ArrayList<Integer>();
@@ -17,6 +17,7 @@ class Solution {
         
         ArrayList<Double> perlist = new ArrayList<Double>(); 
         int people=stages.length;
+          
         for(int i=1; i<plist.size(); i++){
         	if(people==0) perlist.add(0.0);
         	else perlist.add((double)plist.get(i)/people);
@@ -25,7 +26,7 @@ class Solution {
     
         int count=0;
         do{
-            int max_i=perlist.size()-1;
+            int max_i=perlist.size()-1;  
             for(int i=perlist.size()-1; i>=0; i--){
                 if(perlist.get(max_i)<=perlist.get(i)){
                     max_i=i;
