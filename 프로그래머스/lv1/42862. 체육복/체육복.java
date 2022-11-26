@@ -42,6 +42,7 @@ class Solution {
                     break;
                 }
             }
+            if(start==reserveList.size()) break;
         }
 
         return answer;
