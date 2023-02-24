@@ -2,9 +2,7 @@ class Solution {
     public int solution(int n) {
         int answer = 0;
         
-        Double tmp=Math.sqrt(n);
-        
-        if(tmp==tmp.intValue()){
+        if(n==(int)Math.sqrt(n)*Math.sqrt(n)){
             answer=1;
         }else{
             answer=2;
