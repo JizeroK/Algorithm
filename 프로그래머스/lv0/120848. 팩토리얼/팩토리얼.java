@@ -6,10 +6,12 @@ class Solution {
         answer=1;
         do{
             tmp=answer*tmp;
-            answer++;
+            if(n/tmp!=0){
+                answer++;
+            }
         }while(n/tmp!=0);
     
-        answer-=2;
+        answer-=1;
         
         return answer;
     }
