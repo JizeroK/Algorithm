@@ -7,7 +7,7 @@ class Solution {
         int j=0;
         int num=0;
         
-        Loop1 : for(int i=0; i<cities.length; i++){
+        for(int i=0; i<cities.length; i++){
             if(cacheSize==0){   //캐시 사이즈가 0이면
                 answer=cities.length*5;
                 break;
